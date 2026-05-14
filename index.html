@@ -640,11 +640,277 @@
       0%, 100% { opacity: 0; transform: scaleY(.5); transform-origin: top; }
       50%       { opacity: 1; transform: scaleY(1); }
     }
+
+    /* ─── GATE / ENVELOPE ─── */
+    #gate {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #dff3fb 0%, #f0e8f8 40%, #fce8f0 100%);
+      transition: opacity 0.8s ease;
+    }
+    #gate.fade-out { opacity: 0; pointer-events: none; }
+
+    .gate-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      padding: 24px;
+      animation: fadeUp .7s .1s both;
+    }
+    .gate-eyebrow {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11px;
+      letter-spacing: .45em;
+      color: var(--sky);
+      text-transform: uppercase;
+    }
+    .gate-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 7vw, 40px);
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: .03em;
+      text-align: center;
+      line-height: 1.2;
+    }
+    .gate-title span {
+      display: block;
+      font-style: italic;
+      font-size: .65em;
+      background: linear-gradient(90deg, var(--sky), var(--rose));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-top: 4px;
+    }
+
+    /* Envelope */
+    .envelope-scene { perspective: 900px; }
+    .envelope {
+      position: relative;
+      width: clamp(280px, 80vw, 340px);
+      height: clamp(190px, 55vw, 230px);
+    }
+
+    .env-back {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, #FFF8F2 0%, #FDF0EC 100%);
+      border-radius: 4px;
+      box-shadow: 0 12px 48px rgba(232,130,154,.22), 0 2px 8px rgba(232,130,154,.1);
+    }
+    .env-fold-left {
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 0;
+      border-bottom: 105px solid #F4DDD8;
+      border-right: 170px solid transparent;
+      z-index: 1;
+    }
+    .env-fold-right {
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 0; height: 0;
+      border-bottom: 105px solid #EDD8D4;
+      border-left: 170px solid transparent;
+      z-index: 1;
+    }
+
+    .env-letter {
+      position: absolute;
+      left: 10%;
+      width: 80%;
+      bottom: 6px;
+      height: 180px;
+      background: linear-gradient(160deg, #fff 0%, #FFF8F5 100%);
+      border-radius: 3px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+      z-index: 2;
+      transform: translateY(0px);
+      transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.3, 1) 0.5s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .env-letter.risen { transform: translateY(-165px); }
+    .letter-inner {
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.5s ease 1.3s;
+      padding: 12px;
+    }
+    .env-letter.risen .letter-inner { opacity: 1; }
+    .letter-flower { font-size: 22px; margin-bottom: 8px; }
+    .letter-names {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      color: var(--rose);
+      letter-spacing: .06em;
+      margin-bottom: 4px;
+    }
+    .letter-date {
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: .2em;
+    }
+
+    .env-flap {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(170deg, #F8E8EE 0%, #EDCCD8 100%);
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      transform-origin: top center;
+      transform-style: preserve-3d;
+      transition: transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 4;
+    }
+    .env-flap.open { transform: rotateX(-185deg); }
+
+    .wax-seal {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 46px; height: 46px;
+      background: radial-gradient(circle at 38% 35%, #F4A0B8, #D4607A);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 9px;
+      letter-spacing: .05em;
+      color: rgba(255,255,255,.9);
+      box-shadow: 0 3px 14px rgba(212,96,122,.45);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      animation: sealPulse 2.2s ease-in-out infinite;
+    }
+    @keyframes sealPulse {
+      0%, 100% { box-shadow: 0 3px 14px rgba(212,96,122,.45); }
+      50%       { box-shadow: 0 3px 22px rgba(212,96,122,.7), 0 0 0 7px rgba(212,96,122,.1); }
+    }
+    .wax-seal.gone {
+      opacity: 0;
+      transform: translateX(-50%) scale(0);
+      animation: none;
+    }
+
+    .gate-form {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    .gate-hint {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: .04em;
+      line-height: 1.9;
+      font-weight: 300;
+    }
+    .gate-input-row { display: flex; gap: 8px; align-items: center; }
+    .gate-input {
+      padding: 12px 20px;
+      border: 1.5px solid var(--rose-light);
+      border-radius: 100px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      color: var(--text);
+      letter-spacing: .12em;
+      text-align: center;
+      outline: none;
+      background: white;
+      width: 190px;
+      transition: border-color .3s, box-shadow .3s;
+    }
+    .gate-input:focus {
+      border-color: var(--rose);
+      box-shadow: 0 0 0 3px rgba(232,130,154,.15);
+    }
+    .gate-btn {
+      padding: 12px 22px;
+      background: var(--rose);
+      color: white;
+      border: none;
+      border-radius: 100px;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 15px;
+      letter-spacing: .1em;
+      cursor: pointer;
+      transition: all .3s;
+      box-shadow: 0 4px 16px rgba(232,130,154,.35);
+    }
+    .gate-btn:hover {
+      background: #d4697f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(232,130,154,.45);
+    }
+    .gate-error {
+      font-size: 11px;
+      color: var(--rose);
+      letter-spacing: .04em;
+      min-height: 16px;
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .gate-error.show { opacity: 1; }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%       { transform: translateX(-8px); }
+      40%       { transform: translateX(8px); }
+      60%       { transform: translateX(-5px); }
+      80%       { transform: translateX(5px); }
+    }
+    .gate-input.shake { animation: shake 0.5s ease; }
   </style>
 </head>
 <body>
 
 <canvas class="petal-canvas" id="petals"></canvas>
+
+<div id="gate">
+  <div class="gate-content">
+    <p class="gate-eyebrow">Wedding Invitation</p>
+    <h1 class="gate-title">
+      Yuki &amp; Marino
+      <span>September 27, 2026</span>
+    </h1>
+    <div class="envelope-scene">
+      <div class="envelope" id="envelope">
+        <div class="env-back"></div>
+        <div class="env-fold-left"></div>
+        <div class="env-fold-right"></div>
+        <div class="env-letter" id="envLetter">
+          <div class="letter-inner">
+            <p class="letter-flower">🌸</p>
+            <p class="letter-names">Yuki &amp; Marino</p>
+            <p class="letter-date">September 27, 2026</p>
+          </div>
+        </div>
+        <div class="env-flap" id="envFlap">
+          <div class="wax-seal" id="waxSeal">Y&amp;M</div>
+        </div>
+      </div>
+    </div>
+    <div class="gate-form">
+      <p class="gate-hint">新郎または新婦のお名前を<br>アルファベットでご入力ください</p>
+      <div class="gate-input-row">
+        <input id="gateInput" class="gate-input" type="text" placeholder="Yuki / Marino" autocomplete="off" spellcheck="false"/>
+        <button id="gateBtn" class="gate-btn">Open</button>
+      </div>
+      <p class="gate-error" id="gateError">お名前が一致しません</p>
+    </div>
+  </div>
+</div>
 
 <section class="hero" id="top">
   <div class="hero-inner">
@@ -1277,6 +1543,54 @@
     this.style.display = 'none';
     document.getElementById('formSuccess').style.display = 'block';
   });
+
+  (function () {
+    const gate     = document.getElementById('gate');
+    const input    = document.getElementById('gateInput');
+    const btn      = document.getElementById('gateBtn');
+    const error    = document.getElementById('gateError');
+    const flap     = document.getElementById('envFlap');
+    const seal     = document.getElementById('waxSeal');
+    const letter   = document.getElementById('envLetter');
+    const accepted = ['yuki', 'marino'];
+
+    if (sessionStorage.getItem('gateOpen') === '1') {
+      gate.style.display = 'none';
+      return;
+    }
+
+    function openEnvelope() {
+      seal.classList.add('gone');
+      setTimeout(() => flap.classList.add('open'), 350);
+      setTimeout(() => letter.classList.add('risen'), 900);
+      setTimeout(() => {
+        gate.classList.add('fade-out');
+        setTimeout(() => { gate.style.display = 'none'; }, 850);
+      }, 2000);
+      sessionStorage.setItem('gateOpen', '1');
+    }
+
+    function tryOpen() {
+      const val = input.value.trim().toLowerCase();
+      if (accepted.includes(val)) {
+        error.classList.remove('show');
+        input.disabled = true;
+        btn.disabled = true;
+        openEnvelope();
+      } else {
+        error.classList.add('show');
+        input.classList.remove('shake');
+        void input.offsetWidth;
+        input.classList.add('shake');
+        input.select();
+        setTimeout(() => input.classList.remove('shake'), 550);
+      }
+    }
+
+    btn.addEventListener('click', tryOpen);
+    input.addEventListener('keydown', e => { if (e.key === 'Enter') tryOpen(); });
+    input.focus();
+  })();
 </script>
 </body>
 </html>
