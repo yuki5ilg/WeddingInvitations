@@ -694,11 +694,15 @@
     }
 
     /* Envelope */
-    .envelope-scene { perspective: 900px; }
-    .envelope {
+    .envelope-scene {
+      perspective: 900px;
       position: relative;
       width: clamp(280px, 80vw, 340px);
       height: clamp(190px, 55vw, 230px);
+    }
+    .envelope {
+      position: absolute;
+      inset: 0;
       overflow: hidden;
     }
 
@@ -932,9 +936,9 @@
             <p class="letter-date">September 27, 2026</p>
           </div>
         </div>
-        <div class="env-flap" id="envFlap">
-          <div class="wax-seal" id="waxSeal">Y&amp;M</div>
-        </div>
+      </div>
+      <div class="env-flap" id="envFlap">
+        <div class="wax-seal" id="waxSeal">Y&amp;M</div>
       </div>
     </div>
     <div class="gate-form">
