@@ -255,7 +255,9 @@
       letter-spacing: .05em;
     }
 
-    .details-section { background: var(--white); }
+    .details-section {
+      background: var(--white);
+    }
     .details-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -271,95 +273,373 @@
       text-align: center;
       transition: transform .3s, box-shadow .3s;
     }
-    .detail-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(232,130,154,.15); }
-    .detail-card.sky { background: linear-gradient(145deg, var(--sky-pale) 0%, #d8eef8 100%); border-color: rgba(157,208,232,.5); }
+    .detail-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(232,130,154,.15);
+    }
+    .detail-card.sky {
+      background: linear-gradient(145deg, var(--sky-pale) 0%, #d8eef8 100%);
+      border-color: rgba(157,208,232,.5);
+    }
     .detail-card.sky:hover { box-shadow: 0 12px 32px rgba(88,180,212,.15); }
     .detail-card.sky .detail-label { color: var(--sky); }
     .detail-emoji { font-size: 32px; margin-bottom: 16px; display: block; }
-    .detail-label { font-size: 10px; letter-spacing: .4em; color: var(--rose); text-transform: uppercase; margin-bottom: 10px; }
-    .detail-main { font-family: 'Playfair Display', serif; font-size: clamp(20px, 4.5vw, 26px); font-weight: 400; color: var(--text); margin-bottom: 8px; line-height: 1.3; }
-    .detail-sub { font-size: 12px; color: var(--muted); line-height: 1.9; font-weight: 200; }
+    .detail-label {
+      font-size: 10px;
+      letter-spacing: .4em;
+      color: var(--rose);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .detail-main {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(20px, 4.5vw, 26px);
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .detail-sub {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.9;
+      font-weight: 200;
+    }
 
-    .countdown-section { background: linear-gradient(135deg, var(--sky-pale) 0%, #f0e8f8 50%, var(--rose-pale) 100%); }
-    .countdown-wrap { display: flex; justify-content: center; gap: clamp(12px, 4vw, 40px); flex-wrap: wrap; }
-    .countdown-item { text-align: center; background: var(--white); border-radius: 20px; padding: 28px 0; width: 110px; flex-shrink: 0; box-shadow: 0 4px 20px rgba(232,130,154,.1); }
-    .countdown-num { font-family: 'Playfair Display', serif; font-size: clamp(44px, 9vw, 68px); font-weight: 400; line-height: 1; display: block; font-variant-numeric: tabular-nums; letter-spacing: -.02em; width: 100%; text-align: center; }
+    .countdown-section {
+      background: linear-gradient(135deg, var(--sky-pale) 0%, #f0e8f8 50%, var(--rose-pale) 100%);
+    }
+    .countdown-wrap {
+      display: flex;
+      justify-content: center;
+      gap: clamp(12px, 4vw, 40px);
+      flex-wrap: wrap;
+    }
+    .countdown-item {
+      text-align: center;
+      background: var(--white);
+      border-radius: 20px;
+      padding: 28px 0;
+      width: 110px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 20px rgba(232,130,154,.1);
+    }
+    .countdown-num {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(44px, 9vw, 68px);
+      font-weight: 400;
+      line-height: 1;
+      display: block;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -.02em;
+      width: 100%;
+      text-align: center;
+    }
     #cd-days, #cd-mins { color: var(--sky); }
     #cd-hours, #cd-secs { color: var(--rose); }
-    .countdown-label { font-size: 9px; letter-spacing: .35em; color: var(--muted); text-transform: uppercase; margin-top: 8px; }
-    .countdown-sep { font-family: 'Playfair Display', serif; font-size: 40px; background: linear-gradient(180deg, var(--sky-light), var(--rose-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; align-self: center; line-height: 1; }
+    .countdown-label {
+      font-size: 9px;
+      letter-spacing: .35em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+    .countdown-sep {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      background: linear-gradient(180deg, var(--sky-light), var(--rose-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      align-self: center;
+      line-height: 1;
+    }
 
     .timeline-section { background: var(--white); }
-    .timeline { max-width: 580px; margin: 0 auto; position: relative; }
-    .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--sky-light), var(--rose-light), var(--sky-light)); transform: translateX(-50%); border-radius: 2px; }
-    .timeline-item { display: grid; grid-template-columns: 1fr 28px 1fr; gap: 0 20px; margin-bottom: 36px; align-items: start; }
+    .timeline {
+      max-width: 580px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--sky-light), var(--rose-light), var(--sky-light));
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 1fr 28px 1fr;
+      gap: 0 20px;
+      margin-bottom: 36px;
+      align-items: start;
+    }
     .timeline-item:nth-child(odd) .tl-content { grid-column: 1; text-align: right; }
     .timeline-item:nth-child(odd) .tl-time   { grid-column: 3; text-align: left; }
     .timeline-item:nth-child(even) .tl-content { grid-column: 3; grid-row: 1; text-align: left; }
     .timeline-item:nth-child(even) .tl-time   { grid-column: 1; grid-row: 1; text-align: right; }
-    .tl-dot { grid-column: 2; grid-row: 1; width: 14px; height: 14px; background: var(--white); border: 2.5px solid var(--rose); border-radius: 50%; margin-top: 3px; justify-self: center; box-shadow: 0 0 0 4px var(--rose-pale); }
-    .timeline-item:nth-child(even) .tl-dot { border-color: var(--sky); box-shadow: 0 0 0 4px var(--sky-pale); }
-    .tl-time { font-family: 'Playfair Display', serif; font-style: italic; font-size: 19px; color: var(--rose); }
+    .tl-dot {
+      grid-column: 2; grid-row: 1;
+      width: 14px; height: 14px;
+      background: var(--white);
+      border: 2.5px solid var(--rose);
+      border-radius: 50%;
+      margin-top: 3px;
+      justify-self: center;
+      box-shadow: 0 0 0 4px var(--rose-pale);
+    }
+    .timeline-item:nth-child(even) .tl-dot {
+      border-color: var(--sky);
+      box-shadow: 0 0 0 4px var(--sky-pale);
+    }
+    .tl-time {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 19px;
+      color: var(--rose);
+    }
     .timeline-item:nth-child(even) .tl-time { color: var(--sky); }
     .tl-title { font-size: 13px; color: var(--text); font-weight: 400; margin-bottom: 3px; }
     .tl-desc  { font-size: 11px; color: var(--muted); font-weight: 200; }
 
     .map-section { background: linear-gradient(160deg, var(--sky-pale) 0%, var(--ivory) 100%); }
     .map-inner { max-width: 840px; margin: 0 auto; }
-    .venue-info { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-bottom: 36px; }
+    .venue-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      margin-bottom: 36px;
+    }
     @media (max-width: 640px) { .venue-info { grid-template-columns: 1fr; gap: 28px; } }
-    .venue-card { background: linear-gradient(145deg, var(--sky-pale) 0%, #d8eef8 100%); border: 1.5px solid rgba(157,208,232,.5); border-radius: 20px; padding: 32px; }
-    .venue-card-label { font-size: 10px; letter-spacing: .4em; color: var(--sky); text-transform: uppercase; margin-bottom: 12px; }
-    .venue-name { font-family: 'Playfair Display', serif; font-size: clamp(20px, 4vw, 28px); font-weight: 400; color: var(--text); margin-bottom: 12px; line-height: 1.3; }
-    .venue-address { font-size: 12px; color: var(--muted); line-height: 2; font-weight: 200; }
-    .venue-access-title { font-size: 10px; letter-spacing: .3em; color: var(--sky); text-transform: uppercase; margin-bottom: 10px; margin-top: 20px; }
-    .venue-access p { font-size: 12px; color: var(--muted); line-height: 2; font-weight: 200; }
-    .map-embed { width: 100%; height: 260px; border-radius: 20px; overflow: hidden; border: 1.5px solid rgba(157,208,232,.5); box-shadow: 0 4px 20px rgba(88,180,212,.1); }
-    .map-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
+    .venue-card {
+      background: linear-gradient(145deg, var(--sky-pale) 0%, #d8eef8 100%);
+      border: 1.5px solid rgba(157,208,232,.5);
+      border-radius: 20px;
+      padding: 32px;
+    }
+    .venue-card-label {
+      font-size: 10px;
+      letter-spacing: .4em;
+      color: var(--sky);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .venue-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(20px, 4vw, 28px);
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .venue-address {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 2;
+      font-weight: 200;
+    }
+    .venue-access-title {
+      font-size: 10px;
+      letter-spacing: .3em;
+      color: var(--sky);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+    .venue-access p {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 2;
+      font-weight: 200;
+    }
+    .map-embed {
+      width: 100%;
+      height: 260px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1.5px solid rgba(157,208,232,.5);
+      box-shadow: 0 4px 20px rgba(88,180,212,.1);
+    }
+    .map-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
 
-    .rsvp-section { background: linear-gradient(160deg, #fce4ec 0%, #e4f4fa 50%, #fce4ec 100%); }
-    .rsvp-note { text-align: center; font-size: 13px; color: var(--muted); margin-bottom: 48px; font-weight: 200; letter-spacing: .05em; }
-    .rsvp-form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+    .rsvp-section {
+      background: linear-gradient(160deg, #fce4ec 0%, #e4f4fa 50%, #fce4ec 100%);
+    }
+    .rsvp-note {
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 48px;
+      font-weight: 200;
+      letter-spacing: .05em;
+    }
+    .rsvp-form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
     .form-group { display: flex; flex-direction: column; gap: 8px; }
     .form-label { font-size: 10px; letter-spacing: .35em; color: var(--rose); text-transform: uppercase; }
-    .form-input, .form-textarea { background: var(--white); border: 1.5px solid var(--rose-light); color: var(--text); padding: 13px 16px; font-size: 14px; font-family: 'Noto Serif JP', serif; font-weight: 300; outline: none; border-radius: 12px; transition: border-color .3s, box-shadow .3s; width: 100%; }
+    .form-input, .form-textarea {
+      background: var(--white);
+      border: 1.5px solid var(--rose-light);
+      color: var(--text);
+      padding: 13px 16px;
+      font-size: 14px;
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 300;
+      outline: none;
+      border-radius: 12px;
+      transition: border-color .3s, box-shadow .3s;
+      width: 100%;
+    }
     .form-input::placeholder, .form-textarea::placeholder { color: var(--rose-light); }
-    .form-input:focus, .form-textarea:focus { border-color: var(--rose); box-shadow: 0 0 0 3px rgba(232,130,154,.12); }
+    .form-input:focus, .form-textarea:focus {
+      border-color: var(--rose);
+      box-shadow: 0 0 0 3px rgba(232,130,154,.12);
+    }
     .form-textarea { resize: vertical; min-height: 90px; }
     .rsvp-radio-group { display: flex; gap: 12px; align-items: stretch; }
     .rsvp-radio { flex: 1; position: relative; display: flex; }
     .rsvp-radio input { position: absolute; opacity: 0; width: 0; height: 0; }
-    .rsvp-radio label { display: flex; align-items: center; justify-content: center; width: 100%; min-height: 64px; padding: 12px 8px; text-align: center; border: 1.5px solid var(--rose-light); background: var(--white); font-size: 12px; color: var(--muted); cursor: pointer; transition: all .3s; letter-spacing: .05em; border-radius: 12px; }
-    .rsvp-radio input:checked + label { background: var(--rose); border-color: var(--rose); color: var(--white); font-weight: 400; }
-    .btn-submit { margin-top: 8px; padding: 16px 40px; background: var(--rose); border: none; color: var(--white); font-family: 'Playfair Display', serif; font-style: italic; font-size: 16px; letter-spacing: .1em; cursor: pointer; transition: all .3s; width: 100%; border-radius: 100px; box-shadow: 0 4px 20px rgba(232,130,154,.35); }
-    .btn-submit:hover { background: #d4697f; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(232,130,154,.4); }
-    .form-success { display: none; text-align: center; padding: 40px; background: var(--white); border-radius: 24px; box-shadow: 0 8px 40px rgba(232,130,154,.12); max-width: 500px; margin: 0 auto; }
+    .rsvp-radio label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 64px;
+      padding: 12px 8px;
+      text-align: center;
+      border: 1.5px solid var(--rose-light);
+      background: var(--white);
+      font-size: 12px;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all .3s;
+      letter-spacing: .05em;
+      border-radius: 12px;
+    }
+    .rsvp-radio input:checked + label {
+      background: var(--rose);
+      border-color: var(--rose);
+      color: var(--white);
+      font-weight: 400;
+    }
+    .btn-submit {
+      margin-top: 8px;
+      padding: 16px 40px;
+      background: var(--rose);
+      border: none;
+      color: var(--white);
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 16px;
+      letter-spacing: .1em;
+      cursor: pointer;
+      transition: all .3s;
+      width: 100%;
+      border-radius: 100px;
+      box-shadow: 0 4px 20px rgba(232,130,154,.35);
+    }
+    .btn-submit:hover {
+      background: #d4697f;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(232,130,154,.4);
+    }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 40px;
+      background: var(--white);
+      border-radius: 24px;
+      box-shadow: 0 8px 40px rgba(232,130,154,.12);
+      max-width: 500px;
+      margin: 0 auto;
+    }
     .form-success .success-emoji { font-size: 48px; display: block; margin-bottom: 16px; }
     .form-success p { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--rose); margin-bottom: 8px; }
     .form-success span { font-size: 13px; color: var(--muted); font-weight: 200; }
 
-    footer { background: linear-gradient(160deg, #dff3fb 0%, #fce4ec 100%); padding: 56px 24px; text-align: center; position: relative; z-index: 1; border-top: 1px solid rgba(157,208,232,.3); }
-    .footer-names { font-family: 'Playfair Display', serif; font-style: italic; font-size: 28px; background: linear-gradient(90deg, var(--sky), var(--rose)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 10px; }
+    footer {
+      background: linear-gradient(160deg, #dff3fb 0%, #fce4ec 100%);
+      padding: 56px 24px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid rgba(157,208,232,.3);
+    }
+    .footer-flowers { font-size: 24px; margin-bottom: 16px; letter-spacing: 6px; }
+    .footer-names {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 28px;
+      background: linear-gradient(90deg, var(--sky), var(--rose));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
     .footer-date { font-size: 12px; color: var(--muted); letter-spacing: .25em; font-weight: 200; }
 
-    .hero-cat { position: absolute; bottom: 60px; opacity: 0; animation: fadeUp .9s 1.2s forwards; }
+    .hero-cat {
+      position: absolute;
+      bottom: 60px;
+      opacity: 0;
+      animation: fadeUp .9s 1.2s forwards;
+    }
     .hero-cat-left  { left: clamp(8px, 4vw, 60px); }
     .hero-cat-right { right: clamp(8px, 4vw, 60px); transform: scaleX(-1); }
-    .hero-cat svg   { width: clamp(56px, 10vw, 90px); height: auto; filter: drop-shadow(0 4px 12px rgba(232,130,154,.25)); }
+    .hero-cat svg   { width: clamp(56px, 10vw, 90px); height: auto;
+                      filter: drop-shadow(0 4px 12px rgba(232,130,154,.25)); }
 
-    .footer-cats { display: flex; justify-content: center; align-items: flex-end; gap: 16px; margin-bottom: 24px; }
+    .footer-cats {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
     .footer-cats svg { width: 52px; height: auto; }
     .footer-cats svg:nth-child(2) { width: 64px; margin-bottom: -4px; }
 
-    .paw-row { display: flex; justify-content: center; gap: 8px; margin-bottom: 32px; font-size: 18px; opacity: .5; }
+    .paw-row {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 32px;
+      font-size: 18px;
+      opacity: .5;
+    }
 
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes scrollAnim { 0%, 100% { opacity: 0; transform: scaleY(.5); transform-origin: top; } 50% { opacity: 1; transform: scaleY(1); } }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scrollAnim {
+      0%, 100% { opacity: 0; transform: scaleY(.5); transform-origin: top; }
+      50%       { opacity: 1; transform: scaleY(1); }
+    }
   </style>
 </head>
 <body>
@@ -544,13 +824,25 @@
       <div class="ornament-line"></div>
     </div>
     <div class="countdown-wrap">
-      <div class="countdown-item"><span class="countdown-num" id="cd-days">--</span><span class="countdown-label">Days</span></div>
+      <div class="countdown-item">
+        <span class="countdown-num" id="cd-days">--</span>
+        <span class="countdown-label">Days</span>
+      </div>
       <div class="countdown-sep">:</div>
-      <div class="countdown-item"><span class="countdown-num" id="cd-hours">--</span><span class="countdown-label">Hours</span></div>
+      <div class="countdown-item">
+        <span class="countdown-num" id="cd-hours">--</span>
+        <span class="countdown-label">Hours</span>
+      </div>
       <div class="countdown-sep">:</div>
-      <div class="countdown-item"><span class="countdown-num" id="cd-mins">--</span><span class="countdown-label">Mins</span></div>
+      <div class="countdown-item">
+        <span class="countdown-num" id="cd-mins">--</span>
+        <span class="countdown-label">Mins</span>
+      </div>
       <div class="countdown-sep">:</div>
-      <div class="countdown-item"><span class="countdown-num" id="cd-secs">--</span><span class="countdown-label">Secs</span></div>
+      <div class="countdown-item">
+        <span class="countdown-num" id="cd-secs">--</span>
+        <span class="countdown-label">Secs</span>
+      </div>
     </div>
   </div>
 </section>
@@ -567,27 +859,42 @@
     <div class="paw-row">🐾 🐾 🐾 🐾 🐾</div>
     <div class="timeline">
       <div class="timeline-item">
-        <div class="tl-content"><p class="tl-title">受付開始</p><p class="tl-desc">Guests Arrival</p></div>
+        <div class="tl-content">
+          <p class="tl-title">受付開始</p>
+          <p class="tl-desc">Guests Arrival</p>
+        </div>
         <div class="tl-dot"></div>
         <div class="tl-time">14:30</div>
       </div>
       <div class="timeline-item">
         <div class="tl-time">15:00</div>
         <div class="tl-dot"></div>
-        <div class="tl-content"><p class="tl-title">挙式</p><p class="tl-desc">大聖堂 EAST / 教会式</p></div>
+        <div class="tl-content">
+          <p class="tl-title">挙式</p>
+          <p class="tl-desc">大聖堂 EAST / 教会式</p>
+        </div>
       </div>
       <div class="timeline-item">
-        <div class="tl-content"><p class="tl-title">写真撮影</p><p class="tl-desc">Photo Session</p></div>
+        <div class="tl-content">
+          <p class="tl-title">写真撮影</p>
+          <p class="tl-desc">Photo Session</p>
+        </div>
         <div class="tl-dot"></div>
         <div class="tl-time">15:45</div>
       </div>
       <div class="timeline-item">
         <div class="tl-time">16:00</div>
         <div class="tl-dot"></div>
-        <div class="tl-content"><p class="tl-title">披露宴</p><p class="tl-desc">The Suite Grand Bleu</p></div>
+        <div class="tl-content">
+          <p class="tl-title">披露宴</p>
+          <p class="tl-desc">The Suite Grand Bleu</p>
+        </div>
       </div>
       <div class="timeline-item">
-        <div class="tl-content"><p class="tl-title">お開き</p><p class="tl-desc">Farewell</p></div>
+        <div class="tl-content">
+          <p class="tl-title">お開き</p>
+          <p class="tl-desc">Farewell</p>
+        </div>
         <div class="tl-dot"></div>
         <div class="tl-time">19:30</div>
       </div>
@@ -609,9 +916,17 @@
         <div class="venue-card">
           <p class="venue-card-label">Venue</p>
           <h3 class="venue-name">ノートルダム神戸<br /><span style="font-size:.7em;color:var(--muted);">Notre-Dame de Kobe</span></h3>
-          <p class="venue-address">〒650-0042<br />兵庫県神戸市中央区波止場町7-3<br />Tel: 078-367-7711</p>
+          <p class="venue-address">
+            〒650-0042<br />
+            兵庫県神戸市中央区波止場町7-3<br />
+            Tel: 078-367-7711
+          </p>
           <p class="venue-access-title">Access</p>
-          <p>地下鉄海岸線<br />「みなと元町駅」より徒歩約5分<br /><br />JR・阪神「元町駅」より徒歩約10分<br /><br />※敷地内に駐車場があります</p>
+          <p>
+            地下鉄海岸線<br />「みなと元町駅」より徒歩約5分<br /><br />
+            JR・阪神「元町駅」より徒歩約10分<br /><br />
+            ※敷地内に駐車場があります
+          </p>
         </div>
         <div class="map-embed">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.863253357712!2d135.1855237!3d34.6834006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60008f01b93460f1%3A0xe7ff46814eb6c61c!2z44OO44O844OI44Or44OA44Og56We5oi4!5e0!3m2!1sja!2sjp!4v1778732214034!5m2!1sja!2sjp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -633,19 +948,40 @@
     <p class="rsvp-note">2026年 8月 31日（月）までにご返信ください</p>
     <form class="rsvp-form" id="rsvpForm">
       <div class="form-row">
-        <div class="form-group"><label class="form-label">お名前</label><input type="text" class="form-input" placeholder="山田 花子" required /></div>
-        <div class="form-group"><label class="form-label">フリガナ</label><input type="text" class="form-input" placeholder="ヤマダ ハナコ" /></div>
+        <div class="form-group">
+          <label class="form-label">お名前</label>
+          <input type="text" class="form-input" placeholder="山田 花子" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">フリガナ</label>
+          <input type="text" class="form-input" placeholder="ヤマダ ハナコ" />
+        </div>
       </div>
-      <div class="form-group"><label class="form-label">メールアドレス</label><input type="email" class="form-input" placeholder="example@email.com" required /></div>
+      <div class="form-group">
+        <label class="form-label">メールアドレス</label>
+        <input type="email" class="form-input" placeholder="example@email.com" required />
+      </div>
       <div class="form-group">
         <label class="form-label">ご出席</label>
         <div class="rsvp-radio-group">
-          <div class="rsvp-radio"><input type="radio" name="attendance" id="attend-yes" value="yes" checked /><label for="attend-yes">喜んで出席します 🎉</label></div>
-          <div class="rsvp-radio"><input type="radio" name="attendance" id="attend-no" value="no" /><label for="attend-no">欠席させていただきます</label></div>
+          <div class="rsvp-radio">
+            <input type="radio" name="attendance" id="attend-yes" value="yes" checked />
+            <label for="attend-yes">喜んで出席します 🎉</label>
+          </div>
+          <div class="rsvp-radio">
+            <input type="radio" name="attendance" id="attend-no" value="no" />
+            <label for="attend-no">欠席させていただきます</label>
+          </div>
         </div>
       </div>
-      <div class="form-group"><label class="form-label">アレルギー / 食事制限</label><input type="text" class="form-input" placeholder="特になし" /></div>
-      <div class="form-group"><label class="form-label">メッセージ</label><textarea class="form-textarea" placeholder="お祝いのメッセージをどうぞ 💕"></textarea></div>
+      <div class="form-group">
+        <label class="form-label">アレルギー / 食事制限</label>
+        <input type="text" class="form-input" placeholder="特になし" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">メッセージ</label>
+        <textarea class="form-textarea" placeholder="お祝いのメッセージをどうぞ 💕"></textarea>
+      </div>
       <button type="submit" class="btn-submit">返信を送る 🌸</button>
     </form>
     <div class="form-success" id="formSuccess">
@@ -660,11 +996,13 @@
   <div class="footer-cats">
     <svg viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg">
       <path d="M55 85 Q73 75 70 58 Q67 46 58 54" stroke="#F4B8C8" stroke-width="6" fill="none" stroke-linecap="round"/>
-      <ellipse cx="37" cy="74" rx="23" ry="19" fill="#F4B8C8"/><ellipse cx="37" cy="77" rx="13" ry="11" fill="#FDE8EE"/>
+      <ellipse cx="37" cy="74" rx="23" ry="19" fill="#F4B8C8"/>
+      <ellipse cx="37" cy="77" rx="13" ry="11" fill="#FDE8EE"/>
       <circle cx="37" cy="45" r="19" fill="#F4B8C8"/>
       <polygon points="21,34 13,13 31,29" fill="#F4B8C8"/><polygon points="23,32 17,15 29,28" fill="#FFB6C1"/>
       <polygon points="53,34 61,13 43,29" fill="#F4B8C8"/><polygon points="51,32 57,15 45,28" fill="#FFB6C1"/>
-      <ellipse cx="29" cy="43" rx="3.5" ry="4.5" fill="#4A3840"/><ellipse cx="45" cy="43" rx="3.5" ry="4.5" fill="#4A3840"/>
+      <ellipse cx="29" cy="43" rx="3.5" ry="4.5" fill="#4A3840"/>
+      <ellipse cx="45" cy="43" rx="3.5" ry="4.5" fill="#4A3840"/>
       <circle cx="30.5" cy="41.5" r="1.3" fill="white"/><circle cx="46.5" cy="41.5" r="1.3" fill="white"/>
       <ellipse cx="37" cy="51" rx="2.2" ry="1.6" fill="#E8829A"/>
       <path d="M34.8 53 Q37 56 39.2 53" stroke="#E8829A" stroke-width="1.1" fill="none" stroke-linecap="round"/>
@@ -672,17 +1010,21 @@
       <line x1="13" y1="53" x2="31" y2="53" stroke="#C5A8D4" stroke-width=".9" stroke-linecap="round"/>
       <line x1="43" y1="51" x2="61" y2="49" stroke="#C5A8D4" stroke-width=".9" stroke-linecap="round"/>
       <line x1="43" y1="53" x2="61" y2="53" stroke="#C5A8D4" stroke-width=".9" stroke-linecap="round"/>
-      <ellipse cx="26" cy="91" rx="8" ry="5.5" fill="#F4B8C8"/><ellipse cx="46" cy="93" rx="8" ry="5.5" fill="#F4B8C8"/>
-      <polygon points="30,59 37,63 30,67" fill="#C5A8D4"/><polygon points="44,59 37,63 44,67" fill="#C5A8D4"/>
+      <ellipse cx="26" cy="91" rx="8" ry="5.5" fill="#F4B8C8"/>
+      <ellipse cx="46" cy="93" rx="8" ry="5.5" fill="#F4B8C8"/>
+      <polygon points="30,59 37,63 30,67" fill="#C5A8D4"/>
+      <polygon points="44,59 37,63 44,67" fill="#C5A8D4"/>
       <circle cx="37" cy="63" r="2.5" fill="#E8829A"/>
     </svg>
     <svg viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg">
       <path d="M55 85 Q73 75 70 58 Q67 46 58 54" stroke="#C5A8D4" stroke-width="6" fill="none" stroke-linecap="round"/>
-      <ellipse cx="37" cy="74" rx="23" ry="19" fill="#C5A8D4"/><ellipse cx="37" cy="77" rx="13" ry="11" fill="#EFE6F7"/>
+      <ellipse cx="37" cy="74" rx="23" ry="19" fill="#C5A8D4"/>
+      <ellipse cx="37" cy="77" rx="13" ry="11" fill="#EFE6F7"/>
       <circle cx="37" cy="45" r="19" fill="#C5A8D4"/>
       <polygon points="21,34 13,13 31,29" fill="#C5A8D4"/><polygon points="23,32 17,15 29,28" fill="#D4B8E0"/>
       <polygon points="53,34 61,13 43,29" fill="#C5A8D4"/><polygon points="51,32 57,15 45,28" fill="#D4B8E0"/>
-      <ellipse cx="29" cy="43" rx="3.5" ry="4.5" fill="#4A3840"/><ellipse cx="45" cy="43" rx="3.5" ry="4.5" fill="#4A3840"/>
+      <ellipse cx="29" cy="43" rx="3.5" ry="4.5" fill="#4A3840"/>
+      <ellipse cx="45" cy="43" rx="3.5" ry="4.5" fill="#4A3840"/>
       <circle cx="30.5" cy="41.5" r="1.3" fill="white"/><circle cx="46.5" cy="41.5" r="1.3" fill="white"/>
       <ellipse cx="37" cy="51" rx="2.2" ry="1.6" fill="#E8829A"/>
       <path d="M34.8 53 Q37 56 39.2 53" stroke="#E8829A" stroke-width="1.1" fill="none" stroke-linecap="round"/>
@@ -690,16 +1032,19 @@
       <line x1="13" y1="53" x2="31" y2="53" stroke="#F4B8C8" stroke-width=".9" stroke-linecap="round"/>
       <line x1="43" y1="51" x2="61" y2="49" stroke="#F4B8C8" stroke-width=".9" stroke-linecap="round"/>
       <line x1="43" y1="53" x2="61" y2="53" stroke="#F4B8C8" stroke-width=".9" stroke-linecap="round"/>
-      <ellipse cx="26" cy="91" rx="8" ry="5.5" fill="#C5A8D4"/><ellipse cx="46" cy="93" rx="8" ry="5.5" fill="#C5A8D4"/>
+      <ellipse cx="26" cy="91" rx="8" ry="5.5" fill="#C5A8D4"/>
+      <ellipse cx="46" cy="93" rx="8" ry="5.5" fill="#C5A8D4"/>
       <polygon points="29,35 32,25 37,32 42,25 45,35" fill="#F4D5A0" stroke="#C9A96E" stroke-width=".8" stroke-linejoin="round"/>
     </svg>
     <svg viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" style="transform:scaleX(-1)">
       <path d="M55 85 Q73 75 70 58 Q67 46 58 54" stroke="#F4B8C8" stroke-width="6" fill="none" stroke-linecap="round"/>
-      <ellipse cx="37" cy="74" rx="23" ry="19" fill="#F4B8C8"/><ellipse cx="37" cy="77" rx="13" ry="11" fill="#FDE8EE"/>
+      <ellipse cx="37" cy="74" rx="23" ry="19" fill="#F4B8C8"/>
+      <ellipse cx="37" cy="77" rx="13" ry="11" fill="#FDE8EE"/>
       <circle cx="37" cy="45" r="19" fill="#F4B8C8"/>
       <polygon points="21,34 13,13 31,29" fill="#F4B8C8"/><polygon points="23,32 17,15 29,28" fill="#FFB6C1"/>
       <polygon points="53,34 61,13 43,29" fill="#F4B8C8"/><polygon points="51,32 57,15 45,28" fill="#FFB6C1"/>
-      <ellipse cx="29" cy="43" rx="3.5" ry="4.5" fill="#4A3840"/><ellipse cx="45" cy="43" rx="3.5" ry="4.5" fill="#4A3840"/>
+      <ellipse cx="29" cy="43" rx="3.5" ry="4.5" fill="#4A3840"/>
+      <ellipse cx="45" cy="43" rx="3.5" ry="4.5" fill="#4A3840"/>
       <circle cx="30.5" cy="41.5" r="1.3" fill="white"/><circle cx="46.5" cy="41.5" r="1.3" fill="white"/>
       <ellipse cx="37" cy="51" rx="2.2" ry="1.6" fill="#E8829A"/>
       <path d="M34.8 53 Q37 56 39.2 53" stroke="#E8829A" stroke-width="1.1" fill="none" stroke-linecap="round"/>
@@ -707,7 +1052,8 @@
       <line x1="13" y1="53" x2="31" y2="53" stroke="#C5A8D4" stroke-width=".9" stroke-linecap="round"/>
       <line x1="43" y1="51" x2="61" y2="49" stroke="#C5A8D4" stroke-width=".9" stroke-linecap="round"/>
       <line x1="43" y1="53" x2="61" y2="53" stroke="#C5A8D4" stroke-width=".9" stroke-linecap="round"/>
-      <ellipse cx="26" cy="91" rx="8" ry="5.5" fill="#F4B8C8"/><ellipse cx="46" cy="93" rx="8" ry="5.5" fill="#F4B8C8"/>
+      <ellipse cx="26" cy="91" rx="8" ry="5.5" fill="#F4B8C8"/>
+      <ellipse cx="46" cy="93" rx="8" ry="5.5" fill="#F4B8C8"/>
     </svg>
   </div>
   <p class="footer-names">Yuki &amp; Marino</p>
@@ -721,30 +1067,54 @@
     const ctx = canvas.getContext('2d');
     const colors = ['#F4B8C8', '#9DD0E8', '#FDE8EE', '#E4F4FA', '#E8829A44', '#58B4D444'];
     let petals = [];
-    function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+
+    function resize() {
+      canvas.width  = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
     window.addEventListener('resize', resize);
     resize();
+
     function Petal() { this.reset(); }
     Petal.prototype.reset = function () {
-      this.x = Math.random() * canvas.width; this.y = -20;
-      this.size = 5 + Math.random() * 9; this.speed = .35 + Math.random() * .55;
-      this.drift = (Math.random() - .5) * .7; this.rot = Math.random() * Math.PI * 2;
+      this.x = Math.random() * canvas.width;
+      this.y = -20;
+      this.size = 5 + Math.random() * 9;
+      this.speed = .35 + Math.random() * .55;
+      this.drift = (Math.random() - .5) * .7;
+      this.rot = Math.random() * Math.PI * 2;
       this.rotSpeed = (Math.random() - .5) * .045;
       this.color = colors[Math.floor(Math.random() * colors.length)];
       this.opacity = .5 + Math.random() * .5;
     };
     Petal.prototype.update = function () {
-      this.y += this.speed; this.x += this.drift; this.rot += this.rotSpeed;
+      this.y += this.speed;
+      this.x += this.drift;
+      this.rot += this.rotSpeed;
       if (this.y > canvas.height + 20) this.reset();
     };
     Petal.prototype.draw = function () {
-      ctx.save(); ctx.translate(this.x, this.y); ctx.rotate(this.rot);
-      ctx.globalAlpha = this.opacity; ctx.fillStyle = this.color;
-      ctx.beginPath(); ctx.ellipse(0, 0, this.size, this.size * .55, 0, 0, Math.PI * 2);
-      ctx.fill(); ctx.restore();
+      ctx.save();
+      ctx.translate(this.x, this.y);
+      ctx.rotate(this.rot);
+      ctx.globalAlpha = this.opacity;
+      ctx.fillStyle = this.color;
+      ctx.beginPath();
+      ctx.ellipse(0, 0, this.size, this.size * .55, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
     };
-    for (let i = 0; i < 32; i++) { const p = new Petal(); p.y = Math.random() * window.innerHeight; petals.push(p); }
-    function loop() { ctx.clearRect(0, 0, canvas.width, canvas.height); petals.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(loop); }
+
+    for (let i = 0; i < 32; i++) {
+      const p = new Petal();
+      p.y = Math.random() * window.innerHeight;
+      petals.push(p);
+    }
+    function loop() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      petals.forEach(p => { p.update(); p.draw(); });
+      requestAnimationFrame(loop);
+    }
     loop();
   })();
 
@@ -753,18 +1123,24 @@
     function pad(n) { return String(n).padStart(2, '0'); }
     function tick() {
       const diff = target - Date.now();
-      if (diff <= 0) { ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => document.getElementById(id).textContent = '00'); return; }
+      if (diff <= 0) {
+        ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => document.getElementById(id).textContent = '00');
+        return;
+      }
       document.getElementById('cd-days').textContent  = pad(Math.floor(diff / 86400000));
       document.getElementById('cd-hours').textContent = pad(Math.floor((diff % 86400000) / 3600000));
       document.getElementById('cd-mins').textContent  = pad(Math.floor((diff % 3600000) / 60000));
       document.getElementById('cd-secs').textContent  = pad(Math.floor((diff % 60000) / 1000));
     }
-    tick(); setInterval(tick, 1000);
+    tick();
+    setInterval(tick, 1000);
   })();
 
   (function () {
     const io = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
     }, { threshold: .12 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   })();
