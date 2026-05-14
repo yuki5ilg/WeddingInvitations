@@ -904,7 +904,7 @@
     <div class="gate-form">
       <p class="gate-hint">新郎または新婦のお名前を<br>アルファベットでご入力ください</p>
       <div class="gate-input-row">
-        <input id="gateInput" class="gate-input" type="text" placeholder="Yuki / Marino" autocomplete="off" spellcheck="false"/>
+        <input id="gateInput" class="gate-input" type="text" placeholder="Your name" autocomplete="off" spellcheck="false"/>
         <button id="gateBtn" class="gate-btn">Open</button>
       </div>
       <p class="gate-error" id="gateError">お名前が一致しません</p>
@@ -1556,8 +1556,11 @@
 
     if (sessionStorage.getItem('gateOpen') === '1') {
       gate.style.display = 'none';
+      window.scrollTo(0, 0);
       return;
     }
+
+    document.body.style.overflow = 'hidden';
 
     function openEnvelope() {
       seal.classList.add('gone');
@@ -1565,7 +1568,11 @@
       setTimeout(() => letter.classList.add('risen'), 900);
       setTimeout(() => {
         gate.classList.add('fade-out');
-        setTimeout(() => { gate.style.display = 'none'; }, 850);
+        setTimeout(() => {
+          gate.style.display = 'none';
+          document.body.style.overflow = '';
+          window.scrollTo(0, 0);
+        }, 850);
       }, 2000);
       sessionStorage.setItem('gateOpen', '1');
     }
