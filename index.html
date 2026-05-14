@@ -703,33 +703,13 @@
     .envelope {
       position: absolute;
       inset: 0;
+      background: linear-gradient(160deg, #F8E0EC 0%, #F0D2E4 100%);
+      border-radius: 4px;
+      box-shadow: 0 12px 48px rgba(232,130,154,.22), 0 2px 8px rgba(232,130,154,.1);
       overflow: hidden;
       clip-path: inset(0 0 0 0);
     }
 
-    .env-back {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(160deg, #FBE8F0 0%, #F5D8E8 100%);
-      border-radius: 4px;
-      box-shadow: 0 12px 48px rgba(232,130,154,.22), 0 2px 8px rgba(232,130,154,.1);
-    }
-    .env-fold-left {
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 0; height: 0;
-      border-bottom: 105px solid #ECC8D8;
-      border-right: 170px solid transparent;
-      z-index: 1;
-    }
-    .env-fold-right {
-      position: absolute;
-      bottom: 0; right: 0;
-      width: 0; height: 0;
-      border-bottom: 105px solid #E4C0D0;
-      border-left: 170px solid transparent;
-      z-index: 1;
-    }
 
     .env-letter {
       position: absolute;
@@ -776,12 +756,12 @@
       top: 0; left: 0;
       width: 100%;
       height: 50%;
-      background: linear-gradient(170deg, #EDD0E0 0%, #E0BCCC 100%);
-      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      background: linear-gradient(180deg, #EDD0E2 0%, #E4C4D6 100%);
       transform-origin: top center;
       transform-style: preserve-3d;
       transition: transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
       z-index: 4;
+      box-shadow: 0 2px 6px rgba(200,100,140,0.12);
     }
     .env-flap.open { transform: rotateX(-185deg); }
 
@@ -929,9 +909,6 @@
     </h1>
     <div class="envelope-scene">
       <div class="envelope" id="envelope">
-        <div class="env-back"></div>
-        <div class="env-fold-left"></div>
-        <div class="env-fold-right"></div>
         <div class="env-letter" id="envLetter">
           <div class="letter-inner">
             <p class="letter-flower">🌸</p>
@@ -1654,14 +1631,12 @@
         letter.classList.add('risen');
       }, 900);
       setTimeout(() => {
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        document.body.style.overflow = '';
         gate.classList.add('fade-out');
-        setTimeout(() => {
-          gate.style.display = 'none';
-          document.body.style.overflow = '';
-          document.documentElement.scrollTop = 0;
-          document.body.scrollTop = 0;
-          window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-        }, 850);
+        setTimeout(() => { gate.style.display = 'none'; }, 850);
       }, 2000);
       sessionStorage.setItem('gateOpen', '1');
     }
@@ -1689,4 +1664,3 @@
   })();
 </script>
 </body>
-</html>
