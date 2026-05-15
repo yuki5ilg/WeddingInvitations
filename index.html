@@ -1630,41 +1630,41 @@
       <div class="ornament-line"></div>
     </div>
     <p class="rsvp-note">2026年 8月 31日（月）までにご返信ください</p>
-    <form class="rsvp-form" id="rsvpForm" action="https://formspree.io/f/mdabrpar" method="POST">
+    <form class="rsvp-form" id="rsvpForm">
       <div class="form-row">
         <div class="form-group">
           <label class="form-label">お名前</label>
-          <input type="text" class="form-input" placeholder="伊藤 美来" required />
+          <input type="text" name="name" class="form-input" placeholder="伊藤 美来" required />
         </div>
         <div class="form-group">
           <label class="form-label">フリガナ</label>
-          <input type="text" class="form-input" placeholder="イトウ ミク" />
+          <input type="text" name="furigana" class="form-input" placeholder="イトウ ミク" />
         </div>
       </div>
       <div class="form-group">
         <label class="form-label">メールアドレス</label>
-        <input type="email" class="form-input" placeholder="miku.ito@email.com" required />
+        <input type="email" name="email" class="form-input" placeholder="miku.ito@email.com" required />
       </div>
       <div class="form-group">
         <label class="form-label">ご出席</label>
         <div class="rsvp-radio-group">
           <div class="rsvp-radio">
-            <input type="radio" name="attendance" id="attend-yes" value="yes" checked />
+            <input type="radio" name="attendance" id="attend-yes" value="喜んで出席します" checked />
             <label for="attend-yes">喜んで出席します 🎉</label>
           </div>
           <div class="rsvp-radio">
-            <input type="radio" name="attendance" id="attend-no" value="no" />
+            <input type="radio" name="attendance" id="attend-no" value="欠席させていただきます" />
             <label for="attend-no">欠席させていただきます</label>
           </div>
         </div>
       </div>
       <div class="form-group">
         <label class="form-label">アレルギー / 食事制限</label>
-        <input type="text" class="form-input" placeholder="特になし" />
+        <input type="text" name="allergy" class="form-input" placeholder="特になし" />
       </div>
       <div class="form-group">
         <label class="form-label">メッセージ</label>
-        <textarea class="form-textarea" placeholder="お祝いのメッセージをどうぞ 💕"></textarea>
+        <textarea name="message" class="form-textarea" placeholder="お祝いのメッセージをどうぞ 💕"></textarea>
       </div>
       <button type="submit" class="btn-submit">返信を送る 🌸</button>
     </form>
@@ -1939,10 +1939,30 @@
     document.querySelectorAll('.section-divider').forEach(el => io.observe(el));
   })();
 
-  document.getElementById('rsvpForm').addEventListener('submit', function (e) {
+  document.getElementById('rsvpForm').addEventListener('submit', async function (e) {
     e.preventDefault();
-    this.style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
+    const btn = this.querySelector('.btn-submit');
+    btn.disabled = true;
+    btn.textContent = '送信中...';
+    try {
+      const res = await fetch('https://formspree.io/f/mdabrpar', {
+        method: 'POST',
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        this.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        btn.disabled = false;
+        btn.textContent = '返信を送る 🌸';
+        alert('送信に失敗しました。もう一度お試しください。');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = '返信を送る 🌸';
+      alert('送信に失敗しました。もう一度お試しください。');
+    }
   });
 
   (function () {
