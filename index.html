@@ -567,12 +567,12 @@
     }
     .rsvp-face-wrap:hover { transform: scale(1.05); }
     .rsvp-face-wrap img {
-      position: absolute;
-      width: 220%;
-      height: 220%;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      left: -60%;
-      top: -8%;
+      object-position: 50% 28%;
+      transform: scale(2.4);
+      transform-origin: 50% 28%;
     }
     .flower-photo {
       width: clamp(160px, 44vw, 220px);
