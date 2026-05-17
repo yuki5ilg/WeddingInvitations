@@ -666,6 +666,86 @@
     }
     .footer-date { font-size: 12px; color: var(--muted); letter-spacing: .25em; font-weight: 300; }
 
+    /* ── Scattered photos ── */
+    .couple-photo {
+      width: clamp(160px, 45vw, 260px);
+      height: clamp(160px, 45vw, 260px);
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 50%;
+      border: 4px solid var(--sky-light);
+      box-shadow: 0 8px 32px rgba(88,180,212,.22);
+      display: block;
+      margin: 36px auto 0;
+      transition: transform 0.35s ease;
+    }
+    .couple-photo:hover { transform: scale(1.04); }
+    .cat-photo-row {
+      display: flex;
+      justify-content: center;
+      gap: clamp(12px, 3vw, 24px);
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+    .cat-photo-sm {
+      width: clamp(100px, 26vw, 155px);
+      height: clamp(100px, 26vw, 155px);
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--rose-light);
+      box-shadow: 0 6px 24px rgba(232,130,154,.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .cat-photo-sm:hover { transform: scale(1.07) rotate(-3deg); box-shadow: 0 12px 36px rgba(232,130,154,.38); }
+    .tl-cat-wrap {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 28px 0 8px;
+      flex-wrap: wrap;
+    }
+    .tl-cat-photo {
+      width: clamp(80px, 22vw, 120px);
+      height: clamp(80px, 22vw, 120px);
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(232,130,154,.2);
+      transition: transform 0.3s ease;
+    }
+    .tl-cat-photo.tilt-r { transform: rotate(4deg); }
+    .tl-cat-photo.tilt-l { transform: rotate(-4deg); }
+    .tl-cat-photo.sideways { object-position: center 30%; transform: rotate(90deg) scale(0.85); }
+    .tl-cat-photo:hover { transform: rotate(0deg) scale(1.08) !important; box-shadow: 0 10px 28px rgba(232,130,154,.35); }
+    .rsvp-cat-photo {
+      width: clamp(110px, 30vw, 170px);
+      height: clamp(110px, 30vw, 170px);
+      object-fit: cover;
+      object-position: center 15%;
+      border-radius: 50%;
+      border: 3px solid var(--rose-light);
+      display: block;
+      margin: 0 auto 32px;
+      box-shadow: 0 6px 24px rgba(232,130,154,.28);
+      transition: transform 0.35s ease;
+    }
+    .rsvp-cat-photo:hover { transform: scale(1.06) rotate(3deg); }
+    .footer-scatter {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0 0;
+    }
+    .footer-scatter-cat {
+      width: clamp(80px, 20vw, 120px);
+      height: clamp(80px, 20vw, 120px);
+      object-fit: cover;
+      object-position: center 30%;
+      border-radius: 50%;
+      border: 2.5px solid var(--sky-light);
+      box-shadow: 0 4px 16px rgba(88,180,212,.2);
+      transition: transform 0.3s ease;
+    }
+    .footer-scatter-cat:hover { transform: scale(1.1) rotate(5deg); }
+
     .hero-cat {
       position: absolute;
       bottom: 60px;
@@ -1278,6 +1358,7 @@
       心よりお待ち申し上げております。
     </p>
     <p class="message-signature">Yuki &amp; Marino</p>
+    <img src="IMG_3309.jpeg" class="couple-photo reveal" alt="Yuki &amp; Marino" />
   </div>
 </section>
 
@@ -1304,6 +1385,10 @@
   <div class="reveal cat-wrap">
     <p class="cat-name">今月4歳になったティムくん 🐱</p>
     <img src="cat.jpg" alt="ティムくん" class="cat-photo" />
+    <div class="cat-photo-row">
+      <img src="IMG_0416.jpeg" class="cat-photo-sm" alt="子猫のティム" />
+      <img src="IMG_3261.jpeg" class="cat-photo-sm" alt="ドレスアップのティム" />
+    </div>
     <svg class="cat-svg" viewBox="0 0 130 160" xmlns="http://www.w3.org/2000/svg">
       <!-- Tail – dark seal -->
       <path d="M84 142 Q115 128 112 104 Q109 84 94 93" stroke="#3A2015" stroke-width="11" fill="none" stroke-linecap="round"/>
@@ -1503,6 +1588,10 @@
       <div class="ornament-line"></div>
     </div>
     <div class="paw-row">🐾 🐾 🐾 🐾 🐾</div>
+    <div class="tl-cat-wrap">
+      <img src="IMG_0183.jpeg" class="tl-cat-photo tilt-l" alt="野球ティム" />
+      <img src="IMG_1122.jpeg" class="tl-cat-photo tilt-r sideways" alt="サンタティム" />
+    </div>
     <div class="timeline">
       <div class="timeline-item">
         <div class="tl-content">
@@ -1629,6 +1718,7 @@
       <span class="ornament-icon">💌</span>
       <div class="ornament-line"></div>
     </div>
+    <img src="IMG_3311.jpeg" class="rsvp-cat-photo" alt="ハート目のティム" />
     <p class="rsvp-note">2026年 8月 31日（月）までにご返信ください</p>
     <form class="rsvp-form" id="rsvpForm">
       <div class="form-row">
@@ -1676,6 +1766,9 @@
   </div>
 </section>
 
+<div class="footer-scatter">
+  <img src="IMG_1349.png" class="footer-scatter-cat" alt="ごろんのティム" />
+</div>
 <footer>
   <div class="footer-cats">
     <!-- Himalayan (Yuki) with bow tie -->
