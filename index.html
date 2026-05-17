@@ -554,6 +554,35 @@
       font-weight: 300;
       letter-spacing: .05em;
     }
+    .rsvp-face-photo {
+      width: clamp(130px, 34vw, 190px);
+      height: clamp(130px, 34vw, 190px);
+      object-fit: cover;
+      object-position: center 18%;
+      border-radius: 50%;
+      border: 3px solid var(--rose-light);
+      display: block;
+      margin: 0 auto 32px;
+      box-shadow: 0 6px 28px rgba(232,130,154,.3);
+      transition: transform 0.35s ease;
+    }
+    .rsvp-face-photo:hover { transform: scale(1.05); }
+    .flower-photo {
+      width: clamp(160px, 44vw, 220px);
+      height: clamp(160px, 44vw, 220px);
+      object-fit: cover;
+      object-position: center 40%;
+      border-radius: 50%;
+      border: 4px solid var(--sky-light);
+      box-shadow: 0 8px 32px rgba(88,180,212,.25);
+      margin-top: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .flower-photo:hover {
+      animation: catWiggle 0.5s ease infinite;
+      box-shadow: 0 12px 40px rgba(88,180,212,.4);
+    }
     .rsvp-form {
       max-width: 500px;
       margin: 0 auto;
@@ -1373,10 +1402,11 @@
     </defs>
   </svg>
 </div>
-<section class="cat-section photo-bg photo-bg-flower">
+<section class="cat-section">
   <div class="reveal cat-wrap">
     <p class="cat-name">今月4歳になったティムくん 🐱</p>
     <img src="cat.jpg" alt="ティムくん" class="cat-photo" />
+    <img src="IMG_3261.jpeg" alt="ドレスアップのティム" class="flower-photo" />
     <svg class="cat-svg" viewBox="0 0 130 160" xmlns="http://www.w3.org/2000/svg">
       <!-- Tail – dark seal -->
       <path d="M84 142 Q115 128 112 104 Q109 84 94 93" stroke="#3A2015" stroke-width="11" fill="none" stroke-linecap="round"/>
@@ -1627,7 +1657,7 @@
       </div>
       <div class="polaroid pol-right">
         <img src="IMG_0416.jpeg" alt="子猫のティム" style="object-position:center 20%" />
-        <p class="polaroid-caption">Baby Tim 🐾</p>
+        <p class="polaroid-caption">Baby</p>
       </div>
     </div>
   </div>
@@ -1705,7 +1735,7 @@
     </defs>
   </svg>
 </div>
-<section class="rsvp-section photo-bg photo-bg-heart" id="rsvp">
+<section class="rsvp-section" id="rsvp">
   <div class="reveal">
     <span class="section-tag">RSVP</span>
     <h2 class="section-title">ご出欠の<em>ご返信</em></h2>
@@ -1714,6 +1744,7 @@
       <span class="ornament-icon">💌</span>
       <div class="ornament-line"></div>
     </div>
+    <img src="IMG_3311.jpeg" class="rsvp-face-photo" alt="ハート目のティム" />
     <p class="rsvp-note">2026年 8月 31日（月）までにご返信ください</p>
     <form class="rsvp-form" id="rsvpForm">
       <div class="form-row">
