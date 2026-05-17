@@ -788,21 +788,21 @@
       opacity: 0;
       animation: fadeUp .9s 1.4s forwards;
     }
-    .hero-pol img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+    .pol-img-wrap { width: 100%; aspect-ratio: 1; overflow: hidden; }
+    .hero-pol img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .hero-pol .polaroid-caption { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 10px; color: var(--muted); text-align: center; padding-top: 6px; letter-spacing: .04em; }
-    .hero-pol-left  { left: clamp(12px, 3vw, 40px); bottom: clamp(100px, 18vw, 160px); transform: rotate(-5deg); }
+    .hero-pol-left  { left: clamp(12px, 3vw, 40px); bottom: clamp(60px, 10vw, 90px); transform: rotate(-5deg); }
     .hero-pol-right { right: clamp(12px, 3vw, 40px); top: clamp(16px, 4vw, 36px); bottom: auto; transform: rotate(4deg); }
     .hero-pol-left:hover  { transform: rotate(-1deg) scale(1.08); box-shadow: 0 14px 36px rgba(0,0,0,.2); }
     .hero-pol-right:hover { transform: rotate(1deg)  scale(1.08); box-shadow: 0 14px 36px rgba(0,0,0,.2); }
 
     .hero-cat {
       position: absolute;
-      bottom: 60px;
       opacity: 0;
       animation: fadeUp .9s 1.2s forwards;
     }
-    .hero-cat-left  { left: clamp(8px, 4vw, 60px); }
-    .hero-cat-right { right: clamp(8px, 4vw, 60px); transform: scaleX(-1); }
+    .hero-cat-left  { left: clamp(12px, 3vw, 40px); top: clamp(16px, 4vw, 36px); }
+    .hero-cat-right { right: clamp(12px, 3vw, 40px); bottom: clamp(60px, 10vw, 90px); transform: scaleX(-1); }
     .hero-cat svg   { width: clamp(56px, 10vw, 90px); height: auto;
                       filter: drop-shadow(0 4px 12px rgba(232,130,154,.25)); }
 
@@ -1369,11 +1369,15 @@
   </div>
 
   <div class="hero-pol hero-pol-left">
-    <img src="IMG_3261.jpeg" alt="ドレスアップのティム" style="object-position:center 40%;" />
+    <div class="pol-img-wrap">
+      <img src="IMG_3261.jpeg" alt="ドレスアップのティム" style="transform:scale(2.2); transform-origin:center 35%; object-position:center 35%;" />
+    </div>
     <p class="polaroid-caption">Dressed up</p>
   </div>
   <div class="hero-pol hero-pol-right">
-    <img src="IMG_0416.jpeg" alt="子猫のティム" style="object-position:center 15%;" />
+    <div class="pol-img-wrap">
+      <img src="IMG_0416.jpeg" alt="子猫のティム" style="transform:scale(2.0); transform-origin:center 20%; object-position:center 20%;" />
+    </div>
     <p class="polaroid-caption">Baby</p>
   </div>
 </section>
@@ -1629,11 +1633,11 @@
     <!-- Polaroid floats -->
     <div class="polaroid-wrap">
       <div class="polaroid pol-left">
-        <img src="IMG_0183.jpeg" alt="野球ティム" style="object-fit:cover; object-position:center 18%; transform:scale(1.6); transform-origin:center 18%;" />
+        <img src="IMG_0183.jpeg" alt="野球ティム" />
         <p class="polaroid-caption">After Trimming</p>
       </div>
       <div class="polaroid pol-right">
-        <img src="IMG_1122.jpeg" alt="サンタティム" style="transform:rotate(-90deg) scale(1.45); object-position:center 50%;" />
+        <img src="IMG_1122.jpeg" alt="サンタティム"/>
         <p class="polaroid-caption">Santa Tim</p>
       </div>
     </div>
