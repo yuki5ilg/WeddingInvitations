@@ -775,6 +775,26 @@
     .pol-left:hover  { transform: rotate(-1deg) scale(1.08); }
     .pol-right:hover { transform: rotate(1deg)  scale(1.08); }
 
+    /* Hero polaroids */
+    .hero-pol {
+      position: absolute;
+      background: #fff;
+      padding: 7px 7px 22px;
+      box-shadow: 0 6px 24px rgba(0,0,0,.14), 0 2px 6px rgba(0,0,0,.08);
+      width: clamp(90px, 18vw, 130px);
+      z-index: 2;
+      bottom: clamp(80px, 14vw, 130px);
+      transition: transform 0.35s cubic-bezier(0.34,1.4,0.64,1), box-shadow 0.3s ease;
+      opacity: 0;
+      animation: fadeUp .9s 1.4s forwards;
+    }
+    .hero-pol img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+    .hero-pol .polaroid-caption { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 10px; color: var(--muted); text-align: center; padding-top: 6px; letter-spacing: .04em; }
+    .hero-pol-left  { left: clamp(90px, 14vw, 200px); transform: rotate(-5deg); }
+    .hero-pol-right { right: clamp(90px, 14vw, 200px); transform: rotate(4deg); }
+    .hero-pol-left:hover  { transform: rotate(-1deg) scale(1.08); box-shadow: 0 14px 36px rgba(0,0,0,.2); }
+    .hero-pol-right:hover { transform: rotate(1deg)  scale(1.08); box-shadow: 0 14px 36px rgba(0,0,0,.2); }
+
     .hero-cat {
       position: absolute;
       bottom: 60px;
@@ -1346,6 +1366,13 @@
       <ellipse cx="30" cy="106" rx="12" ry="7" fill="#4A2818"/>
       <ellipse cx="54" cy="108" rx="12" ry="7" fill="#4A2818"/>
     </svg>
+  <div class="hero-pol hero-pol-left">
+    <img src="IMG_3261.jpeg" alt="ドレスアップのティム" style="object-position:center 40%;" />
+    <p class="polaroid-caption">Dressed up</p>
+  </div>
+  <div class="hero-pol hero-pol-right">
+    <img src="IMG_0416.jpeg" alt="子猫のティム" style="object-position:center 15%;" />
+    <p class="polaroid-caption">Baby</p>
   </div>
 </section>
 
@@ -1413,8 +1440,6 @@
   <div class="reveal cat-wrap">
     <p class="cat-name">今月4歳になったティムくん 🐱</p>
     <img src="cat.jpg" alt="ティムくん" class="cat-photo" />
-    <img src="IMG_3261.jpeg" alt="ドレスアップのティム" class="flower-photo" />
-    <img src="IMG_0416.jpeg" alt="子猫のティム" class="flower-photo" style="border-color:var(--rose-light); object-position:center 15%;" />
     <p class="cat-caption">どこかで登場するかも？？？</p>
   </div>
 </section>
@@ -1606,7 +1631,7 @@
         <p class="polaroid-caption">After Trimming</p>
       </div>
       <div class="polaroid pol-right">
-        <img src="IMG_1122.jpeg" alt="サンタティム" style="transform:rotate(90deg) scale(1.5); object-position:center 40%;" />
+        <img src="IMG_1122.jpeg" alt="サンタティム" style="transform:rotate(-90deg) scale(1.45); object-position:center 50%;" />
         <p class="polaroid-caption">Santa Tim</p>
       </div>
     </div>
