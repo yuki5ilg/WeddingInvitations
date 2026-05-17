@@ -790,8 +790,8 @@
     }
     .hero-pol img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
     .hero-pol .polaroid-caption { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 10px; color: var(--muted); text-align: center; padding-top: 6px; letter-spacing: .04em; }
-    .hero-pol-left  { left: clamp(90px, 14vw, 200px); transform: rotate(-5deg); }
-    .hero-pol-right { right: clamp(90px, 14vw, 200px); transform: rotate(4deg); }
+    .hero-pol-left  { left: clamp(12px, 3vw, 40px); bottom: clamp(100px, 18vw, 160px); transform: rotate(-5deg); }
+    .hero-pol-right { right: clamp(12px, 3vw, 40px); top: clamp(16px, 4vw, 36px); bottom: auto; transform: rotate(4deg); }
     .hero-pol-left:hover  { transform: rotate(-1deg) scale(1.08); box-shadow: 0 14px 36px rgba(0,0,0,.2); }
     .hero-pol-right:hover { transform: rotate(1deg)  scale(1.08); box-shadow: 0 14px 36px rgba(0,0,0,.2); }
 
@@ -1366,6 +1366,8 @@
       <ellipse cx="30" cy="106" rx="12" ry="7" fill="#4A2818"/>
       <ellipse cx="54" cy="108" rx="12" ry="7" fill="#4A2818"/>
     </svg>
+  </div>
+
   <div class="hero-pol hero-pol-left">
     <img src="IMG_3261.jpeg" alt="ドレスアップのティム" style="object-position:center 40%;" />
     <p class="polaroid-caption">Dressed up</p>
@@ -1627,7 +1629,7 @@
     <!-- Polaroid floats -->
     <div class="polaroid-wrap">
       <div class="polaroid pol-left">
-        <img src="IMG_0183.jpeg" alt="野球ティム" />
+        <img src="IMG_0183.jpeg" alt="野球ティム" style="object-fit:cover; object-position:center 18%; transform:scale(1.6); transform-origin:center 18%;" />
         <p class="polaroid-caption">After Trimming</p>
       </div>
       <div class="polaroid pol-right">
