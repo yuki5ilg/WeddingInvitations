@@ -380,24 +380,26 @@
     .countdown-section {
       background: linear-gradient(135deg, var(--sky-pale) 0%, #f0e8f8 50%, var(--rose-pale) 100%);
     }
+    .countdown-section { padding-left: clamp(12px, 4vw, 80px); padding-right: clamp(12px, 4vw, 80px); }
     .countdown-wrap {
       display: flex;
       justify-content: center;
-      gap: clamp(12px, 4vw, 40px);
-      flex-wrap: wrap;
+      align-items: stretch;
+      gap: clamp(3px, 1vw, 40px);
+      flex-wrap: nowrap;
     }
     .countdown-item {
       text-align: center;
       background: var(--white);
-      border-radius: 20px;
-      padding: 28px 0;
-      width: 110px;
-      flex-shrink: 0;
+      border-radius: clamp(12px, 3vw, 20px);
+      padding: clamp(14px, 3.5vw, 28px) clamp(2px, 1vw, 6px);
+      width: clamp(54px, 18vw, 110px);
+      flex-shrink: 1;
       box-shadow: 0 4px 20px rgba(232,130,154,.1);
     }
     .countdown-num {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(44px, 9vw, 68px);
+      font-size: clamp(26px, 8vw, 68px);
       font-weight: 400;
       line-height: 1;
       display: block;
@@ -409,15 +411,15 @@
     #cd-days, #cd-mins { color: var(--sky); }
     #cd-hours, #cd-secs { color: var(--rose); }
     .countdown-label {
-      font-size: 9px;
-      letter-spacing: .35em;
+      font-size: clamp(7px, 1.9vw, 9px);
+      letter-spacing: clamp(.08em, 1vw, .35em);
       color: var(--muted);
       text-transform: uppercase;
       margin-top: 8px;
     }
     .countdown-sep {
       font-family: 'Playfair Display', serif;
-      font-size: 40px;
+      font-size: clamp(16px, 5vw, 40px);
       background: linear-gradient(180deg, var(--sky-light), var(--rose-light));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -1265,10 +1267,10 @@
       <ellipse cx="34" cy="101" rx="8" ry="6" fill="#EFE3D2"/>
       <ellipse cx="56" cy="101" rx="8" ry="6" fill="#EFE3D2"/>
       <!-- Ears -->
-      <path d="M19 31 Q16 7 35 20 Z" fill="#5A3A26"/>
-      <path d="M71 31 Q74 7 55 20 Z" fill="#5A3A26"/>
-      <path d="M24 27 Q22 14 32 21 Z" fill="#EAA4B6"/>
-      <path d="M66 27 Q68 14 58 21 Z" fill="#EAA4B6"/>
+      <path d="M16 32 Q11 4 36 19 Z" fill="#5A3A26"/>
+      <path d="M74 32 Q79 4 54 19 Z" fill="#5A3A26"/>
+      <path d="M21 27 Q18 11 33 20 Z" fill="#EAA4B6"/>
+      <path d="M69 27 Q72 11 57 20 Z" fill="#EAA4B6"/>
       <!-- Head -->
       <circle cx="45" cy="46" r="30" fill="#F7EFE2"/>
       <!-- Soft cocoa muzzle (cute seal point) -->
@@ -1277,16 +1279,16 @@
       <ellipse cx="27" cy="55" rx="6.5" ry="3.8" fill="#F4A0B4" opacity="0.6"/>
       <ellipse cx="63" cy="55" rx="6.5" ry="3.8" fill="#F4A0B4" opacity="0.6"/>
       <!-- Big sparkly eyes -->
-      <ellipse cx="32" cy="46" rx="9" ry="10.5" fill="#fff"/>
-      <ellipse cx="58" cy="46" rx="9" ry="10.5" fill="#fff"/>
-      <circle cx="32" cy="47" r="7.5" fill="#6BC4EC"/>
-      <circle cx="58" cy="47" r="7.5" fill="#6BC4EC"/>
-      <circle cx="32" cy="48" r="4.6" fill="#1F74B4"/>
-      <circle cx="58" cy="48" r="4.6" fill="#1F74B4"/>
-      <circle cx="29" cy="43" r="3" fill="#fff"/>
-      <circle cx="55" cy="43" r="3" fill="#fff"/>
-      <circle cx="34.5" cy="50.5" r="1.6" fill="#fff" opacity="0.8"/>
-      <circle cx="60.5" cy="50.5" r="1.6" fill="#fff" opacity="0.8"/>
+      <ellipse cx="32" cy="46" rx="6.6" ry="7.8" fill="#fff"/>
+      <ellipse cx="58" cy="46" rx="6.6" ry="7.8" fill="#fff"/>
+      <circle cx="32" cy="46.6" r="5.4" fill="#6BC4EC"/>
+      <circle cx="58" cy="46.6" r="5.4" fill="#6BC4EC"/>
+      <circle cx="32" cy="47.3" r="3.3" fill="#1F74B4"/>
+      <circle cx="58" cy="47.3" r="3.3" fill="#1F74B4"/>
+      <circle cx="29.9" cy="43.6" r="2.2" fill="#fff"/>
+      <circle cx="55.9" cy="43.6" r="2.2" fill="#fff"/>
+      <circle cx="34" cy="49.4" r="1.1" fill="#fff" opacity="0.8"/>
+      <circle cx="60" cy="49.4" r="1.1" fill="#fff" opacity="0.8"/>
       <!-- Nose -->
       <path d="M45 55 l-3.2 -2.6 h6.4 Z" fill="#E87E96"/>
       <!-- :3 mouth -->
@@ -1313,10 +1315,10 @@
       <ellipse cx="34" cy="101" rx="8" ry="6" fill="#EFE3D2"/>
       <ellipse cx="56" cy="101" rx="8" ry="6" fill="#EFE3D2"/>
       <!-- Ears -->
-      <path d="M19 31 Q16 7 35 20 Z" fill="#5A3A26"/>
-      <path d="M71 31 Q74 7 55 20 Z" fill="#5A3A26"/>
-      <path d="M24 27 Q22 14 32 21 Z" fill="#EAA4B6"/>
-      <path d="M66 27 Q68 14 58 21 Z" fill="#EAA4B6"/>
+      <path d="M16 32 Q11 4 36 19 Z" fill="#5A3A26"/>
+      <path d="M74 32 Q79 4 54 19 Z" fill="#5A3A26"/>
+      <path d="M21 27 Q18 11 33 20 Z" fill="#EAA4B6"/>
+      <path d="M69 27 Q72 11 57 20 Z" fill="#EAA4B6"/>
       <!-- Head -->
       <circle cx="45" cy="46" r="30" fill="#F7EFE2"/>
       <!-- Soft cocoa muzzle -->
@@ -1325,16 +1327,16 @@
       <ellipse cx="27" cy="55" rx="6.5" ry="3.8" fill="#9DD0E8" opacity="0.7"/>
       <ellipse cx="63" cy="55" rx="6.5" ry="3.8" fill="#9DD0E8" opacity="0.7"/>
       <!-- Big sparkly eyes -->
-      <ellipse cx="32" cy="46" rx="9" ry="10.5" fill="#fff"/>
-      <ellipse cx="58" cy="46" rx="9" ry="10.5" fill="#fff"/>
-      <circle cx="32" cy="47" r="7.5" fill="#6BC4EC"/>
-      <circle cx="58" cy="47" r="7.5" fill="#6BC4EC"/>
-      <circle cx="32" cy="48" r="4.6" fill="#1F74B4"/>
-      <circle cx="58" cy="48" r="4.6" fill="#1F74B4"/>
-      <circle cx="29" cy="43" r="3" fill="#fff"/>
-      <circle cx="55" cy="43" r="3" fill="#fff"/>
-      <circle cx="34.5" cy="50.5" r="1.6" fill="#fff" opacity="0.8"/>
-      <circle cx="60.5" cy="50.5" r="1.6" fill="#fff" opacity="0.8"/>
+      <ellipse cx="32" cy="46" rx="6.6" ry="7.8" fill="#fff"/>
+      <ellipse cx="58" cy="46" rx="6.6" ry="7.8" fill="#fff"/>
+      <circle cx="32" cy="46.6" r="5.4" fill="#6BC4EC"/>
+      <circle cx="58" cy="46.6" r="5.4" fill="#6BC4EC"/>
+      <circle cx="32" cy="47.3" r="3.3" fill="#1F74B4"/>
+      <circle cx="58" cy="47.3" r="3.3" fill="#1F74B4"/>
+      <circle cx="29.9" cy="43.6" r="2.2" fill="#fff"/>
+      <circle cx="55.9" cy="43.6" r="2.2" fill="#fff"/>
+      <circle cx="34" cy="49.4" r="1.1" fill="#fff" opacity="0.8"/>
+      <circle cx="60" cy="49.4" r="1.1" fill="#fff" opacity="0.8"/>
       <!-- Nose -->
       <path d="M45 55 l-3.2 -2.6 h6.4 Z" fill="#7FB4D8"/>
       <!-- :3 mouth -->
@@ -1395,13 +1397,13 @@
       <div class="ornament-line"></div>
     </div>
     <p class="message-text">
-      この度、私たちは結婚式を挙げることになりました。<br />
-      長い時間をかけて育んだ絆を、<br />
+      この度　私たちは結婚式を挙げることになりました<br />
+      長い時間をかけて育んだ絆を<br />
       大切なみなさまに見守っていただきながら<br />
-      永遠の誓いを立てたいと思っております。<br /><br />
-      ご多忙のこととは存じますが、<br />
-      ぜひご出席いただけますと幸いです。<br />
-      心よりお待ち申し上げております。
+      永遠の誓いを立てたいと思っております<br /><br />
+      ご多忙のこととは存じますが<br />
+      ぜひご出席いただけますと幸いです<br />
+      心よりお待ち申し上げております
     </p>
     <p class="message-signature">Yuki &amp; Marino</p>
   </div>
@@ -1771,24 +1773,24 @@
       <ellipse cx="40" cy="78" rx="21" ry="17" fill="#F7EFE2"/>
       <ellipse cx="30" cy="91" rx="7" ry="5" fill="#EFE3D2"/>
       <ellipse cx="50" cy="91" rx="7" ry="5" fill="#EFE3D2"/>
-      <path d="M16 29 Q14 7 32 19 Z" fill="#5A3A26"/>
-      <path d="M64 29 Q66 7 48 19 Z" fill="#5A3A26"/>
-      <path d="M21 25 Q19 13 29 20 Z" fill="#EAA4B6"/>
-      <path d="M59 25 Q61 13 51 20 Z" fill="#EAA4B6"/>
+      <path d="M13 30 Q9 4 33 18 Z" fill="#5A3A26"/>
+      <path d="M67 30 Q71 4 47 18 Z" fill="#5A3A26"/>
+      <path d="M18 25 Q15 10 30 19 Z" fill="#EAA4B6"/>
+      <path d="M62 25 Q65 10 50 19 Z" fill="#EAA4B6"/>
       <circle cx="40" cy="42" r="26" fill="#F7EFE2"/>
       <ellipse cx="40" cy="51" rx="15" ry="10" fill="#8A5E40" opacity="0.5"/>
       <ellipse cx="23" cy="50" rx="5.6" ry="3.3" fill="#F4A0B4" opacity="0.6"/>
       <ellipse cx="57" cy="50" rx="5.6" ry="3.3" fill="#F4A0B4" opacity="0.6"/>
-      <ellipse cx="28" cy="42" rx="8" ry="9.2" fill="white"/>
-      <ellipse cx="52" cy="42" rx="8" ry="9.2" fill="white"/>
-      <circle cx="28" cy="43" r="6.5" fill="#6BC4EC"/>
-      <circle cx="52" cy="43" r="6.5" fill="#6BC4EC"/>
-      <circle cx="28" cy="44" r="4" fill="#1F74B4"/>
-      <circle cx="52" cy="44" r="4" fill="#1F74B4"/>
-      <circle cx="25.5" cy="39.5" r="2.6" fill="white"/>
-      <circle cx="49.5" cy="39.5" r="2.6" fill="white"/>
-      <circle cx="30" cy="46" r="1.3" fill="white" opacity="0.8"/>
-      <circle cx="54" cy="46" r="1.3" fill="white" opacity="0.8"/>
+      <ellipse cx="28" cy="42" rx="5.9" ry="6.9" fill="white"/>
+      <ellipse cx="52" cy="42" rx="5.9" ry="6.9" fill="white"/>
+      <circle cx="28" cy="42.6" r="4.7" fill="#6BC4EC"/>
+      <circle cx="52" cy="42.6" r="4.7" fill="#6BC4EC"/>
+      <circle cx="28" cy="43.3" r="2.9" fill="#1F74B4"/>
+      <circle cx="52" cy="43.3" r="2.9" fill="#1F74B4"/>
+      <circle cx="26.1" cy="39.8" r="1.9" fill="white"/>
+      <circle cx="50.1" cy="39.8" r="1.9" fill="white"/>
+      <circle cx="30" cy="45" r="1" fill="white" opacity="0.8"/>
+      <circle cx="54" cy="45" r="1" fill="white" opacity="0.8"/>
       <path d="M40 50 l-2.8 -2.2 h5.6 Z" fill="#E87E96"/>
       <path d="M40 51.5 Q36.5 55 33.5 52.5" stroke="#9A6A4A" stroke-width="1.2" fill="none" stroke-linecap="round"/>
       <path d="M40 51.5 Q43.5 55 46.5 52.5" stroke="#9A6A4A" stroke-width="1.2" fill="none" stroke-linecap="round"/>
@@ -1823,14 +1825,14 @@
       <ellipse cx="23" cy="50" rx="5.2" ry="3.1" fill="#F0909E" opacity="0.55"/>
       <ellipse cx="57" cy="50" rx="5.2" ry="3.1" fill="#F0909E" opacity="0.55"/>
       <!-- Big shiny eyes -->
-      <circle cx="30" cy="43" r="7.5" fill="white"/>
-      <circle cx="50" cy="43" r="7.5" fill="white"/>
-      <circle cx="30" cy="44" r="6" fill="#2A1A0C"/>
-      <circle cx="50" cy="44" r="6" fill="#2A1A0C"/>
-      <circle cx="27.5" cy="41" r="2.5" fill="white"/>
-      <circle cx="47.5" cy="41" r="2.5" fill="white"/>
-      <circle cx="32" cy="46.5" r="1.2" fill="white" opacity="0.75"/>
-      <circle cx="52" cy="46.5" r="1.2" fill="white" opacity="0.75"/>
+      <circle cx="30" cy="43" r="6" fill="white"/>
+      <circle cx="50" cy="43" r="6" fill="white"/>
+      <circle cx="30" cy="43.7" r="4.8" fill="#2A1A0C"/>
+      <circle cx="50" cy="43.7" r="4.8" fill="#2A1A0C"/>
+      <circle cx="28.2" cy="41" r="2" fill="white"/>
+      <circle cx="48.2" cy="41" r="2" fill="white"/>
+      <circle cx="31.5" cy="45.5" r="1" fill="white" opacity="0.75"/>
+      <circle cx="51.5" cy="45.5" r="1" fill="white" opacity="0.75"/>
       <!-- Nose -->
       <ellipse cx="40" cy="51" rx="2.6" ry="1.8" fill="#B0584A"/>
       <!-- Cute buck teeth -->
@@ -1854,24 +1856,24 @@
       <ellipse cx="40" cy="78" rx="21" ry="17" fill="#F7EFE2"/>
       <ellipse cx="30" cy="91" rx="7" ry="5" fill="#EFE3D2"/>
       <ellipse cx="50" cy="91" rx="7" ry="5" fill="#EFE3D2"/>
-      <path d="M16 29 Q14 7 32 19 Z" fill="#5A3A26"/>
-      <path d="M64 29 Q66 7 48 19 Z" fill="#5A3A26"/>
-      <path d="M21 25 Q19 13 29 20 Z" fill="#EAA4B6"/>
-      <path d="M59 25 Q61 13 51 20 Z" fill="#EAA4B6"/>
+      <path d="M13 30 Q9 4 33 18 Z" fill="#5A3A26"/>
+      <path d="M67 30 Q71 4 47 18 Z" fill="#5A3A26"/>
+      <path d="M18 25 Q15 10 30 19 Z" fill="#EAA4B6"/>
+      <path d="M62 25 Q65 10 50 19 Z" fill="#EAA4B6"/>
       <circle cx="40" cy="42" r="26" fill="#F7EFE2"/>
       <ellipse cx="40" cy="51" rx="15" ry="10" fill="#8A5E40" opacity="0.5"/>
       <ellipse cx="23" cy="50" rx="5.6" ry="3.3" fill="#9DD0E8" opacity="0.7"/>
       <ellipse cx="57" cy="50" rx="5.6" ry="3.3" fill="#9DD0E8" opacity="0.7"/>
-      <ellipse cx="28" cy="42" rx="8" ry="9.2" fill="white"/>
-      <ellipse cx="52" cy="42" rx="8" ry="9.2" fill="white"/>
-      <circle cx="28" cy="43" r="6.5" fill="#6BC4EC"/>
-      <circle cx="52" cy="43" r="6.5" fill="#6BC4EC"/>
-      <circle cx="28" cy="44" r="4" fill="#1F74B4"/>
-      <circle cx="52" cy="44" r="4" fill="#1F74B4"/>
-      <circle cx="25.5" cy="39.5" r="2.6" fill="white"/>
-      <circle cx="49.5" cy="39.5" r="2.6" fill="white"/>
-      <circle cx="30" cy="46" r="1.3" fill="white" opacity="0.8"/>
-      <circle cx="54" cy="46" r="1.3" fill="white" opacity="0.8"/>
+      <ellipse cx="28" cy="42" rx="5.9" ry="6.9" fill="white"/>
+      <ellipse cx="52" cy="42" rx="5.9" ry="6.9" fill="white"/>
+      <circle cx="28" cy="42.6" r="4.7" fill="#6BC4EC"/>
+      <circle cx="52" cy="42.6" r="4.7" fill="#6BC4EC"/>
+      <circle cx="28" cy="43.3" r="2.9" fill="#1F74B4"/>
+      <circle cx="52" cy="43.3" r="2.9" fill="#1F74B4"/>
+      <circle cx="26.1" cy="39.8" r="1.9" fill="white"/>
+      <circle cx="50.1" cy="39.8" r="1.9" fill="white"/>
+      <circle cx="30" cy="45" r="1" fill="white" opacity="0.8"/>
+      <circle cx="54" cy="45" r="1" fill="white" opacity="0.8"/>
       <path d="M40 50 l-2.8 -2.2 h5.6 Z" fill="#7FB4D8"/>
       <path d="M40 51.5 Q36.5 55 33.5 52.5" stroke="#6892B0" stroke-width="1.2" fill="none" stroke-linecap="round"/>
       <path d="M40 51.5 Q43.5 55 46.5 52.5" stroke="#6892B0" stroke-width="1.2" fill="none" stroke-linecap="round"/>
@@ -2065,23 +2067,11 @@
 
     function openEnvelope() {
       seal.classList.add('gone');
-      // 手紙を即時表示（フラップが隠しているので opacity 遷移不要）
-      letter.style.display = 'flex';
-      letter.style.opacity = '1';
       // フラップを開く
       setTimeout(() => flap.classList.add('open'), 200);
       // フラップ強制非表示
       setTimeout(() => { flap.style.visibility = 'hidden'; }, 1100);
-      // V字に見えていた手紙をそのまま上にスライド（z-index変更なし→env-frontのクリップ維持）
-      setTimeout(() => {
-        letter.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease';
-        letter.style.transform = 'translateY(-120px)';
-        letter.style.boxShadow = '2px 10px 32px rgba(0,0,0,.12), 0 2px 12px rgba(232,130,154,.1)';
-      }, 1700);
-      // スライド後にコンテンツをフェードイン
-      setTimeout(() => {
-        document.getElementById('letterInner').style.opacity = '1';
-      }, 2150);
+      // 開いたらそのままサイトへ
       setTimeout(() => {
         document.documentElement.scrollTop = 0;
         document.body.scrollTop = 0;
@@ -2089,7 +2079,7 @@
         document.body.style.overflow = '';
         gate.classList.add('fade-out');
         setTimeout(() => { gate.style.display = 'none'; }, 950);
-      }, 2200);
+      }, 1350);
     }
 
     function tryOpen() {
