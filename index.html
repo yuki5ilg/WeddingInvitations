@@ -2067,11 +2067,23 @@
 
     function openEnvelope() {
       seal.classList.add('gone');
+      // 手紙を即時表示（フラップが隠しているので opacity 遷移不要）
+      letter.style.display = 'flex';
+      letter.style.opacity = '1';
       // フラップを開く
       setTimeout(() => flap.classList.add('open'), 200);
       // フラップ強制非表示
       setTimeout(() => { flap.style.visibility = 'hidden'; }, 1100);
-      // 開いたらそのままサイトへ
+      // V字に見えていた手紙をそのまま上にスライド（z-index変更なし→env-frontのクリップ維持）
+      setTimeout(() => {
+        letter.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease';
+        letter.style.transform = 'translateY(-120px)';
+        letter.style.boxShadow = '2px 10px 32px rgba(0,0,0,.12), 0 2px 12px rgba(232,130,154,.1)';
+      }, 1700);
+      // スライド後にコンテンツをフェードイン
+      setTimeout(() => {
+        document.getElementById('letterInner').style.opacity = '1';
+      }, 2150);
       setTimeout(() => {
         document.documentElement.scrollTop = 0;
         document.body.scrollTop = 0;
@@ -2079,7 +2091,7 @@
         document.body.style.overflow = '';
         gate.classList.add('fade-out');
         setTimeout(() => { gate.style.display = 'none'; }, 950);
-      }, 1350);
+      }, 2200);
     }
 
     function tryOpen() {
