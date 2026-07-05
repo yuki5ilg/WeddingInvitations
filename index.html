@@ -1720,6 +1720,11 @@
         </div>
       </div>
 
+      <div class="form-group" id="emailGroup" style="display:none;">
+        <label class="form-label">メールアドレス</label>
+        <input type="email" name="email" class="form-input" placeholder="miku.ito@email.com" disabled />
+      </div>
+
       <div class="form-group">
         <label class="form-label">ご出席</label>
         <div class="rsvp-radio-group">
@@ -2064,7 +2069,17 @@
     const seal     = document.getElementById('waxSeal');
     const letter   = document.getElementById('envLetter');
     const envelope = document.getElementById('envelope');
-    const accepted = ['yuki', 'marino'];
+    const accepted  = ['yuki', 'marino'];
+    const relatives = ['shinseki'];  // ← 親戚用パスワード（お好きな英字に変更可）
+
+    function revealEmailField() {
+      const g = document.getElementById('emailGroup');
+      if (!g) return;
+      g.style.display = 'flex';
+      const inp = g.querySelector('input');
+      inp.disabled = false;
+      inp.required = true;
+    }
 
     document.body.style.overflow = 'hidden';
 
@@ -2109,10 +2124,11 @@
         setTimeout(() => input.classList.remove('shake'), 550);
         return;
       }
-      if (accepted.includes(val)) {
+      if (accepted.includes(val) || relatives.includes(val)) {
         error.classList.remove('show');
         input.disabled = true;
         btn.disabled = true;
+        if (relatives.includes(val)) revealEmailField();
         openEnvelope();
       } else {
         error.textContent = 'お名前が一致しません';
