@@ -1,0 +1,16 @@
+name = "wedding-rsvp"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+# 許可するフォームのオリジン（サイトのドメイン）
+[vars]
+ALLOWED_ORIGINS = "https://weddinginvitation.yuki5ilg.com,https://yuki5ilg.github.io"
+
+# D1 データベース（`wrangler d1 create wedding-rsvp` 実行後、出力の database_id を貼る）
+[[d1_databases]]
+binding       = "DB"
+database_name = "wedding-rsvp"
+database_id   = "PASTE_DATABASE_ID_HERE"
+
+# 管理ページのパスワードは secret で設定する:
+#   npx wrangler secret put ADMIN_TOKEN
