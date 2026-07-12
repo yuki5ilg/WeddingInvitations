@@ -2103,7 +2103,7 @@
     }
 
     function tryOpen() {
-      const val = input.value.trim().toLowerCase();
+      const val = input.value.trim().normalize('NFKC').toLowerCase();
       if (/[぀-ヿ]/.test(input.value)) {
         error.textContent = 'アルファベットでご入力ください';
         error.classList.add('show');
