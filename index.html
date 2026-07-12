@@ -2040,7 +2040,7 @@
     btn.disabled = true;
     btn.textContent = '送信中...';
     try {
-      const res = await fetch('https://formspree.io/f/mdabrpar', {
+      const res = await fetch('https://wedding-rsvp.yuki5ilg.workers.dev/', {
         method: 'POST',
         body: new FormData(this),
         headers: { 'Accept': 'application/json' }
@@ -2049,16 +2049,14 @@
         this.style.display = 'none';
         document.getElementById('formSuccess').style.display = 'block';
       } else {
-        let detail = '';
-        try { detail = JSON.stringify(await res.json()); } catch (e) { detail = await res.text().catch(() => ''); }
         btn.disabled = false;
         btn.textContent = '返信を送る 🌸';
-        alert('送信に失敗しました（HTTP ' + res.status + '）\n' + detail);
+        alert('送信に失敗しました。もう一度お試しください。');
       }
-    } catch (err) {
+    } catch {
       btn.disabled = false;
       btn.textContent = '返信を送る 🌸';
-      alert('送信エラー: ' + (err && err.message ? err.message : err));
+      alert('送信に失敗しました。もう一度お試しください。');
     }
   });
 
