@@ -10,7 +10,7 @@ ALLOWED_ORIGINS = "https://weddinginvitation.yuki5ilg.com,https://yuki5ilg.githu
 [[d1_databases]]
 binding       = "DB"
 database_name = "wedding-rsvp"
-database_id   = "PASTE_DATABASE_ID_HERE"
+database_id   = "03cecf8f-ccfc-4cb8-898b-c0c947c30efb"
 
 # 管理ページのパスワードは secret で設定する:
 #   npx wrangler secret put ADMIN_TOKEN
